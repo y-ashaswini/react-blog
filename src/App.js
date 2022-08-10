@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import BlogsList from './Components/BlogsList';
+import Navbar from './Components/Navbar';
+import Add from './Components/Add';
+import UseFetch from './Components/UseFetch';
+import BlogDetails from './Components/BlogDetails';
 
-function App() {
+// import {useEffect, useState} from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+
+export default function App() {
+  const {data: blogs, load, error} = UseFetch('http://localhost:8000/blogs');
+  const allBlogs = blogs && blogs.map((blog)=>(
+    <BlogsList blogs={blog} key={blog.id}/>
+    ))
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+      <div>
+        <Router>
+        <Navbar/>
+        {error && <div className="message-display">Encountered error : {error} </div>}
+        {load && <div className="message-display">Loading...</div>}    
+          <div className='content'>
+            <Switch>
+              <Route exact path = "/">{allBlogs}</Route>
+              <Route exact path = "/add"><Add/></Route>
+              <Route exact path = "/:id"><BlogDetails/></Route>
+            </Switch>
 
-export default App;
+          </div>
+        
+      </Router>
+    </div>
+  )
+}

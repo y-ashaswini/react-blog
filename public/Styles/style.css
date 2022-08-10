@@ -1,0 +1,148 @@
+body {
+    font-family: 'Noto Sans Display', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* Navbar */
+
+.nav {
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-shadow: 5px 0px 30px 2px gray;
+    background-color: #212121;
+    color: #fff;
+    margin-bottom: 3rem;
+}
+.logo {
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+    font-weight: 900;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+
+}
+.items {
+    display: flex;
+    flex-direction: row;
+
+}
+.item {
+    font-size: 1rem;
+    margin: auto 2rem;
+    opacity: 70%;
+    text-decoration: none;
+    color: white;
+}
+.item:hover {
+    cursor: pointer;
+    opacity: 100%;
+}
+
+/* Blog */
+
+.blog-box {
+    border: 1px solid black;
+    border-radius: 10px;
+    /* padding: 1rem; */
+    color: black;
+    margin: 1rem 2rem;
+    width: 70%;
+    padding: 1rem;
+}
+
+.blog-box h2 {
+    font-size: 2rem;
+    margin: -0.8rem 0;
+}
+
+.blog-box h4 {
+    font-size: 1rem;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+.blog-box h5 {
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.blog-box button, .blog-details button, .add-blog form button {
+    padding: 0.5rem 1rem;
+    background-color: #212121;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 0.8rem;
+    cursor: pointer;
+    width: 5rem;
+    text-align: center;
+}
+
+/* Content */
+.content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+/* Error Messages */
+.message-display {
+    font-size: 1.5rem;
+    margin: 3rem;
+    font-style: italic;
+}
+
+
+/* Blog Content */
+.blog-details {
+    margin:0 3rem 3rem;
+
+}
+
+.blog-details h2 {
+    font-size: 3rem;
+}
+.blog-details h5 {
+    font-size: 0.8rem;
+    font-style: italic;
+}.blog-details p {
+    font-size: 1.2rem;
+}
+
+
+/* Add Blog */
+.add-blog {
+    margin: -1rem 30% 2rem;
+    width: 100%;
+}
+
+.add-blog h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.add-blog form label{
+    font-style: italic;
+ }
+
+.add-blog form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.add-blog form input,.add-blog form textarea  {
+    margin-bottom: 2rem;
+    margin-top: 0.8rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-bottom: solid #212121 1px;
+    font-family: 'Noto Sans Display', sans-serif;
+    
+}
